@@ -1,7 +1,7 @@
 Open Engineering Builder
 
 <p align="center">
-  <img src="./hero-banner.png" alt="Open Engineering Builder" width="100%">
+  <img src="../assets/hero-banner.png" alt="Open Engineering Builder" width="100%">
 </p>
 <p align="center">
   <strong>From engineering intent to engineered reality.</strong>
