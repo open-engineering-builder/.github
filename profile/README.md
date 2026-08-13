@@ -1,4 +1,4 @@
-Open Engineering Builder
+# Open Engineering Builder
 
 <p align="center">
   <img src="../assets/hero-banner.png" alt="Open Engineering Builder" width="100%">
@@ -9,7 +9,7 @@ Open Engineering Builder
 
 ⸻
 
-Welcome
+## Welcome
 
 Open Engineering Builder is the home of the concrete Builder implementation within the Open Engineering ecosystem.
 
@@ -18,7 +18,7 @@ A Builder is an engineering actor that turns intent into change.
 It receives structured engineering context, understands the environment in which it operates, determines what needs to be created or changed, performs the work through available capabilities, validates the result, and produces evidence of what happened.
 
 In its simplest form:
-
+```
 Intent
   ↓
 Context
@@ -34,12 +34,12 @@ Artifacts + Runtime Changes
 Validation
   ↓
 Evidence
-
+```
 The Builder closes the gap between describing an engineered system and actually building it.
 
 ⸻
 
-Why Builder?
+## Why Builder?
 
 Open Engineering increasingly describes systems declaratively.
 
@@ -66,16 +66,16 @@ Something has to act.
 That is the role of the Builder.
 
 A Builder takes structured engineering intent and turns it into a concrete, inspectable result.
-
+```
 Definition → Builder → Implementation
-
+```
 The Builder therefore sits at an important boundary in Open Engineering:
 
 between what should exist and what actually exists.
 
 ⸻
 
-Builder as an Engineering Actor
+## Builder as an Engineering Actor
 
 A Builder is more than a code generator.
 
@@ -96,7 +96,7 @@ A Builder may:
 11. report the outcome.
 
 This produces a feedback loop rather than a one-shot generation step.
-
+```
               ┌───────────────┐
               │    Intent     │
               └───────┬───────┘
@@ -121,16 +121,16 @@ This produces a feedback loop rather than a one-shot generation step.
                                       │
                                       ▼
                                    Builder
-
+```
 The Builder can therefore observe the consequences of its work and continue until the desired engineering state has been reached.
 
 ⸻
 
-What Can a Builder Build?
+## What Can a Builder Build?
 
 Potential targets include:
 
-Source
+### Source
 
 * repositories;
 * applications;
@@ -141,7 +141,7 @@ Source
 * configuration;
 * documentation.
 
-Infrastructure
+### Infrastructure
 
 * Kubernetes resources;
 * Crossplane resources;
@@ -151,7 +151,7 @@ Infrastructure
 * identities;
 * runtime dependencies.
 
-Open Engineering Elements
+### Open Engineering Elements
 
 * Picos;
 * capsules;
@@ -161,7 +161,7 @@ Open Engineering Elements
 * workflows;
 * integrations.
 
-Engineering Artifacts
+### Engineering Artifacts
 
 * schemas;
 * manifests;
@@ -177,7 +177,7 @@ Building is an engineering operation.
 
 ⸻
 
-Builders and AI
+## Builders and AI
 
 Builders are designed for an engineering world in which humans and AI agents work together.
 
@@ -188,7 +188,7 @@ A tool can perform an operation.
 A capability describes something that can be done.
 
 A Builder connects these concepts into an engineering process.
-
+```
 Human / Agent
       │
       ▼
@@ -209,14 +209,14 @@ Human / Agent
               │
               ▼
        Engineered State
-
+```
 The Builder does not need to contain every capability itself.
 
 Instead, it should discover, compose, and invoke capabilities supplied by the surrounding Open Engineering ecosystem.
 
 ⸻
 
-Composition Over Reinvention
+## Composition Over Reinvention
 
 A core principle of Open Engineering is:
 
@@ -229,7 +229,7 @@ It should not independently redefine concepts already owned elsewhere in the eco
 Instead, it consumes them.
 
 For example:
-
+```
 Conventions ───────┐
 Definitions ───────┤
 Rules ─────────────┤
@@ -240,12 +240,12 @@ Plans ─────────────┼──▶ Builder ───▶ R
 Compositions ──────┤
 Runtimes ──────────┤
 Evidence ──────────┘
-
+```
 The Builder becomes a consumer and executor of shared engineering knowledge.
 
 ⸻
 
-Declarative Where Possible
+## Declarative Where Possible
 
 The desired state should preferably be expressed declaratively.
 
@@ -258,7 +258,7 @@ prefer:
 This is the state that should exist.
 
 The Builder determines how to move from the observed state toward that desired state.
-
+```
 Desired State
      +
 Observed State
@@ -277,7 +277,7 @@ Execution
      │
      ▼
 New Observed State
-
+```
 This makes Builder behavior compatible with technologies and ideas such as:
 
 * GitOps;
@@ -290,12 +290,12 @@ This makes Builder behavior compatible with technologies and ideas such as:
 
 ⸻
 
-Reconciliation
+## Reconciliation
 
 An important long-term property of a Builder is reconciliation.
 
 A Builder should eventually be able to answer:
-
+```
 What should exist?
         │
         ▼
@@ -309,9 +309,9 @@ What should I do?
         │
         ▼
 Did it work?
-
+```
 This transforms building from a one-time activity into a controlled engineering lifecycle.
-
+```
 Observe
    ↓
 Compare
@@ -324,10 +324,10 @@ Validate
    ↓
 Observe
    ↺
-
+```
 ⸻
 
-Evidence-Driven Engineering
+## Evidence-Driven Engineering
 
 A Builder should never merely claim:
 
@@ -352,7 +352,7 @@ Evidence might include:
 * provenance records.
 
 The desired lifecycle is:
-
+```
 Intent
    ↓
 Change
@@ -362,17 +362,17 @@ Observation
 Evidence
    ↓
 Conclusion
-
+```
 This supports one of the fundamental Open Engineering principles:
 
 Engineering claims should be backed by evidence.
 
 ⸻
 
-Builder Lifecycle
+## Builder Lifecycle
 
 A generic Builder lifecycle can be represented as:
-
+```
 RECEIVE
    │
    ▼
@@ -402,17 +402,17 @@ RECORD                       │
 REPORT                       │
                              │
                              └──▶ REPLAN
-
+```
 Individual Builder implementations may specialize this lifecycle while preserving the common semantics.
 
 ⸻
 
-Builder Context
+## Builder Context
 
 A Builder should operate with explicit context.
 
 A possible conceptual context is:
-
+```
 builder:
   intent: ...
   target: ...
@@ -425,35 +425,38 @@ builder:
   observations: ...
   memories: ...
   evidence: ...
-
+```
 The exact schema belongs in the appropriate Open Engineering definition and convention repositories.
 
 The important principle is that Builder behavior should be inspectable rather than hidden inside prompts.
 
 ⸻
 
-Builder vs. Builders
+## Builder vs. Builders
 
 The distinction between the singular and plural concepts is intentional.
 
-Builders
+### Builders
 
 Open Engineering Builders describes the broader concept, contracts, patterns, taxonomy, and ecosystem of Builders.
-
+```
 Builders
    ↓
 defines what a Builder can be
+```
 
-Builder
+### Builder
 
 Open Engineering Builder provides a concrete implementation.
-
+```
 Builder
    ↓
 implements those concepts
+```
 
 Together:
 
+```
 Open Engineering Builders
         │
         │ definitions
@@ -463,15 +466,16 @@ Open Engineering Builder
         │ implementation
         ▼
      Execution
+```
 
 This follows the recurring Open Engineering pattern of separating definition from implementation.
 
 ⸻
 
-Relationship to Open Engineering
+## Relationship to Open Engineering
 
 The Builder participates in the wider Open Engineering graph rather than becoming a new center of gravity.
-
+```
                     Open Engineering
  Definitions ─┐
  Conventions ─┤
@@ -486,58 +490,58 @@ The Builder participates in the wider Open Engineering graph rather than becomin
  Runtimes ────┤          │
  Elements ────┘          ▼
                        Reality
-
+```
 The Builder is therefore one participant in a composable engineering architecture.
 
 ⸻
 
-Design Principles
+## Design Principles
 
 Open Engineering Builder should evolve according to several principles.
 
-Intent before implementation
+### Intent before implementation
 
 Understand what needs to be achieved before deciding how to achieve it.
 
-Composition over duplication
+### Composition over duplication
 
 Reuse existing Open Engineering definitions, capabilities, conventions, and services.
 
-Declarative over imperative
+### Declarative over imperative
 
 Describe desired state whenever practical and let the Builder determine the required actions.
 
-Evidence over assertion
+### Evidence over assertion
 
 Completion should be demonstrated through observable evidence.
 
-Idempotence where possible
+### Idempotence where possible
 
 Repeating a Builder operation should converge toward the same desired state rather than producing uncontrolled duplication.
 
-Explicit context
+### Explicit context
 
 Important assumptions, dependencies, constraints, and decisions should be represented as data.
 
-Human inspectability
+### Human inspectability
 
 Plans and significant actions should remain understandable to engineers.
 
-Replaceable intelligence
+### Replaceable intelligence
 
 The architecture should not depend unnecessarily on one AI model, agent framework, or provider.
 
-Open interfaces
+### Open interfaces
 
 Builders should interact with the ecosystem through documented contracts and interoperable interfaces.
 
-Safe execution
+### Safe execution
 
 A Builder should understand the scope and consequences of the actions it is permitted to perform.
 
 ⸻
 
-A Simple Example
+## A Simple Example
 
 Suppose the desired engineering intent is:
 
@@ -546,7 +550,7 @@ Build a Hello World Pico and run it in Manifold.
 The Builder should not simply generate arbitrary files.
 
 It might instead discover:
-
+```
 Intent
   │
   ├── Pico definition
@@ -557,7 +561,7 @@ Intent
   ├── Runtime definition
   ├── Manifold environment
   └── Deployment capabilities
-
+```
 It can then derive a plan:
 
 1. Validate the requested Pico
@@ -579,10 +583,10 @@ A verified Pico running in the intended environment, with evidence that it works
 
 ⸻
 
-Repository Direction
+## Repository Direction
 
 The implementation hosted by this organization should gradually establish:
-
+```
 source/
 ├── builder/
 │   ├── context/
@@ -601,17 +605,17 @@ source/
 ├── examples/
 ├── tests/
 └── docs/
-
+```
 This is an architectural direction rather than a rigid initial structure.
 
 The implementation should grow from small, demonstrable Builder loops instead of attempting to implement the entire vision at once.
 
 ⸻
 
-Minimum Viable Builder
+## Minimum Viable Builder
 
 A useful first milestone is deliberately small.
-
+```
 Intent
    ↓
 Builder
@@ -623,13 +627,13 @@ Repository Change
 Validation
    ↓
 Evidence
-
+```
 For example:
 
 Given a structured request to create a minimal Open Engineering artifact, discover the relevant convention, create the artifact in a controlled workspace, validate it, and return both the artifact and evidence.
 
 From there the Builder can progressively gain:
-
+```
 Repository Building
         ↓
 Multi-Repository Building
@@ -643,13 +647,13 @@ Composition Building
 Reconciliation
         ↓
 Autonomous Engineering Loops
-
+```
 ⸻
 
-The Goal
+## The Goal
 
 Open Engineering Builder is ultimately about making engineering intent executable.
-
+```
 Describe
    ↓
 Understand
@@ -663,7 +667,7 @@ Observe
 Prove
    ↓
 Improve
-
+```
 The ambition is not an AI that merely writes code.
 
 It is an engineering actor capable of participating responsibly in the lifecycle of real systems.
